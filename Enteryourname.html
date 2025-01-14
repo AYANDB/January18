@@ -8,48 +8,55 @@
     <style>
         body {
             background-color: rgb(245, 238, 238);
-            background: url("HBD5.jpg");
+            background: url("HBD5.jpeg");
             padding: 30px;
             background-attachment: fixed;
             line-height: 1.6;
             background-size: cover;
             text-align: center;
-            color: rgb(216, 180, 19);
+            color: rgb(14, 15, 15);
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 50vh;
-            
+            height: 30vh;
+
 
         }
 
         span {
-            color: rgb(201, 23, 23);
+            color: rgb(240, 25, 125);
             font-size: 1.5rem;
         }
 
         .input {
-            width: 300px;
+            width: 250px;
             padding: 10px;
-            border: 2px solid #520404;
-            border-radius: 10px;
-            font-size: 16px;
-            box-shadow: 0px 4px 6px rgba(0,0,0,0.8);
+            border: 2px solid rgb(240, 25, 125);
+            border-radius: 15px;
+            font-size: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0px 4px 6px rgba(221, 17, 17, 0.8);
         }
-        .button{
-            background-color: #640606;
-            color:rgb(216, 180, 19);
+
+        .button {
+            background-color: rgb(240, 25, 125);
+            color: rgb(248, 248, 248);
             font-weight: bolder;
             padding: 12px 25px;
-            font-size: 16px;
+            font-size: 15px;
             border: none;
-            border-radius: 8px;
+            border-radius: 13px;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.8);
-            transition: transform 0.2s,box-shodow 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+            transition: transform 0.2s, box-shodow 0.2s;
+
 
         }
 
+        .audio-player {
+            margin-top: px;
+            
+        }
     </style>
 </head>
 
@@ -60,6 +67,12 @@
         <h3>First Letter Must Be In Capital</h3>
         <input class="input" type="text" placeholder="Enter Your First Name">
         <button class="button" onclick="love()">Enter</button>
+        <div class="audio-player">
+            <audio controls>
+                <source src="Uyire_Un_Uyirena.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
     </div>
 
 </body>
