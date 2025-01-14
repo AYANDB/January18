@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(245, 238, 238);
+            background: url("HBD5.jpg");
+            padding: 30px;
+            background-attachment: fixed;
+            line-height: 1.6;
+            background-size: cover;
+            text-align: center;
+            color: rgb(216, 180, 19);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            
+
+        }
+
+        span {
+            color: rgb(201, 23, 23);
+            font-size: 1.5rem;
+        }
+
+        .input {
+            width: 300px;
+            padding: 10px;
+            border: 2px solid #520404;
+            border-radius: 10px;
+            font-size: 16px;
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.8);
+        }
+        .button{
+            background-color: #640606;
+            color:rgb(216, 180, 19);
+            font-weight: bolder;
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.8);
+            transition: transform 0.2s,box-shodow 0.2s;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3>Hey! Its <span>Ashik</span> And I Love You <span>Divya</span></h3>
+        <h3>Type Your First Name</h3>
+        <h3>First Letter Must Be In Capital</h3>
+        <input class="input" type="text" placeholder="Enter Your First Name">
+        <button class="button" onclick="love()">Enter</button>
+    </div>
+
+</body>
+<script>
+
+    function love() {
+        let input = document.querySelector("input").value;
+        let button = document.querySelector("button");
+        if (input === "") {
+            alert("Please Enter Your First Name")
+        }
+        else if (input === "Divya") {
+            window.location.href = "gpthbd.html"
+        }
+        else {
+            alert("Hello " + input + " You Are Not My Divya.")
+        }
+    }
+
+</script>
+
+</html>
