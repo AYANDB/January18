@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Box</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #227b96;
+        }
+        #chat-container {
+            width: 300px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background: rgb(70, 37, 214);
+            border-radius: 50px;
+        }
+        #chat-box {
+            height: 200px;
+            overflow-y: auto;
+            border-bottom: 1px solid rgb(70,37,214);
+            padding: 5px;
+            margin-bottom: 5px;
+        }
+        #message-input {
+            width: 80%;
+            padding: 5px;
+        }
+        #send-button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-box"></div>
+        <input type="text" id="message-input" placeholder="Type a Message">
+        <button id="send-button">Send</button>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script> <!-- Include Socket.io -->
+    <script>
+        const socket = io(); // Initialize Socket.io connection
+
+        const chatBox = document.getElementById("chat-box");
+        const messageInput = document.getElementById("message-input");
+        const sendButton = document.getElementById("send-button");
+
+        sendButton.addEventListener("click", function() {
+            const message = messageInput.value;
+            if (message.trim() !== "") {
+                socket.emit('chatMessage', message); // Send message to server
+                messageInput.value = ''; // Clear input field
+            }
+        });
+
+        // Listen for messages from the server
+        socket.on('chatMessage', function(msg) {
+            const newMessage = document.createElement("div");
+            newMessage.textContent = msg;
+            chatBox.appendChild(newMessage);
+            chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the bottom
+        });
+    </script>
+</body>
+</html>
